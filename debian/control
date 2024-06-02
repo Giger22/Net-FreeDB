@@ -1,0 +1,30 @@
+Source: libnet-freedb-perl
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: gregor herrmann <gregoa@debian.org>
+Section: perl
+Testsuite: autopkgtest-pkg-perl
+Priority: optional
+Build-Depends: debhelper-compat (= 13),
+               libcddb-file-perl <!nocheck>,
+               libmoo-perl <!nocheck>,
+               libtest-most-perl <!nocheck>,
+               perl-xs-dev,
+               perl:native
+Standards-Version: 4.6.2
+Vcs-Browser: https://salsa.debian.org/perl-team/modules/packages/libnet-freedb-perl
+Vcs-Git: https://salsa.debian.org/perl-team/modules/packages/libnet-freedb-perl.git
+Homepage: https://metacpan.org/release/Net-FreeDB
+Rules-Requires-Root: no
+
+Package: libnet-freedb-perl
+Architecture: any
+Depends: ${misc:Depends},
+         ${perl:Depends},
+         ${shlibs:Depends},
+         libcddb-file-perl,
+         libmoo-perl
+Description: Perl interface to freedb servers
+ Net::FreeDB was inspired by Net::CDDB.  And in-fact was designed as a
+ replacement in-part by Net::CDDB's author Jeremy D. Zawodny.  Net::FreeDB
+ provides an OOP interface to the FreeDB servers as well as some basic
+ CDROM functionality like determining disc ids, track offsets, etc.

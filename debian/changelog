@@ -1,0 +1,134 @@
+libnet-freedb-perl (0.10-5) unstable; urgency=medium
+
+  * Add patch to define read_toc() before using it in get_disc_id().
+    (Closes: #1065999)
+  * Update years of packaging copyright.
+  * Declare compliance with Debian Policy 4.6.2.
+  * Set Rules-Requires-Root: no.
+  * Enable all hardening flags.
+  * Annotate test-only build dependencies with <!nocheck>.
+
+ -- gregor herrmann <gregoa@debian.org>  Mon, 11 Mar 2024 00:00:11 +0100
+
+libnet-freedb-perl (0.10-4) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Bump debhelper from old 12 to 13.
+
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Sun, 27 Nov 2022 16:52:42 +0000
+
+libnet-freedb-perl (0.10-3) unstable; urgency=medium
+
+  [ Salvatore Bonaccorso ]
+  * debian/control: Use HTTPS transport protocol for Vcs-Git URI
+
+  [ gregor herrmann ]
+  * debian/copyright: change Copyright-Format 1.0 URL to HTTPS.
+  * Remove TANIGUCHI Takaki from Uploaders. Thanks for your work!
+
+  [ Alex Muntada ]
+  * Remove inactive pkg-perl members from Uploaders.
+
+  [ Salvatore Bonaccorso ]
+  * Update Vcs-* headers for switch to salsa.debian.org
+
+  [ gregor herrmann ]
+  * debian/control: update Build-Depends for cross builds.
+  * debian/watch: use uscan version 4.
+
+  [ Debian Janitor ]
+  * Bump debhelper from old 9 to 12.
+  * Set debhelper-compat version in Build-Depends.
+  * Remove obsolete fields Contact, Name from debian/upstream/metadata
+    (already present in machine-readable debian/copyright).
+
+  [ gregor herrmann ]
+  * Add an incomplete and deactivated patch to fix online tests
+    (which are not run).
+  * Explicitly set HAVE_INTERNET=0 for autopkgtests as well.
+
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Thu, 16 Jun 2022 16:32:43 +0100
+
+libnet-freedb-perl (0.10-2) unstable; urgency=medium
+
+  * Add a patch to change the default host from the defunct
+    freedb.freedb.org to gnudb.gnudb.org.
+    Thanks to Adrian Bunk for the bug report. (Closes: #991089)
+
+ -- gregor herrmann <gregoa@debian.org>  Fri, 16 Jul 2021 20:53:11 +0200
+
+libnet-freedb-perl (0.10-1) unstable; urgency=medium
+
+  * Team upload
+
+  [ Salvatore Bonaccorso ]
+  * Update Vcs-Browser URL to cgit web frontend
+
+  [ Florian Schlichting ]
+  * Add debian/upstream/metadata
+  * Import upstream version 0.10
+  * Drop patches, all applied upstream
+  * Add new dependency on Moo
+  * Add build-dependency on Test::Most for running unit tests, and set
+    HAVE_INTERNET to false
+  * Update years of upstream copyright
+  * Add NEWS entry about backwards-incompatible API
+  * Declare compliance with Debian Policy 3.9.6
+  * Mark package autopkgtest-able
+
+ -- Florian Schlichting <fsfs@debian.org>  Tue, 01 Dec 2015 22:23:41 +0100
+
+libnet-freedb-perl (0.08-4) unstable; urgency=medium
+
+  * Add patch to fix the FTBFS on kFreeBSD-* (Closes: #625841)
+  * Add myself to uploaders
+
+ -- Daniel Lintott <daniel@serverb.co.uk>  Fri, 30 May 2014 11:21:27 +0100
+
+libnet-freedb-perl (0.08-3) unstable; urgency=low
+
+  * Team upload
+
+  [ Ansgar Burchardt ]
+  * debian/control: Convert Vcs-* fields to Git.
+
+  [ Salvatore Bonaccorso ]
+  * Change Vcs-Git to canonical URI (git://anonscm.debian.org)
+  * Change search.cpan.org based URIs to metacpan.org based URIs
+
+  [ Axel Beckert ]
+  * debian/copyright: migrate pre-1.0 format to 1.0 using "cme fix dpkg-
+    copyright"
+
+  [ gregor herrmann ]
+  * Strip trailing slash from metacpan URLs.
+
+  [ Florian Schlichting ]
+  * Switch dh compatibility to level 9 to enable passing of hardening flags
+  * Declare compliance with Debian Policy 3.9.5
+  * Forward patches
+
+ -- Florian Schlichting <fsfs@debian.org>  Thu, 24 Apr 2014 10:56:30 +0200
+
+libnet-freedb-perl (0.08-2) unstable; urgency=medium
+
+  * Switch to source format 3.0 (quilt).
+  * Add a patch to disable tests that need internet access
+    (closes: #625840).
+  * Add a patch to fix a POD syntax error.
+  * Set Standards-Version to 3.9.2 (no changes).
+  * Bump debhelper compatibility level to 8.
+  * Add /me to Uploaders.
+  * Remove version from libcddb-file-perl (build) dependency, nothing older in
+    the archive.
+  * Set urgency to medium (RC bug fix, perl 5.12 transition).
+  * Don't install README and TODO (both more or less empty) anymore.
+  * Add years of upstream copyright.
+
+ -- gregor herrmann <gregoa@debian.org>  Mon, 09 May 2011 21:53:17 +0200
+
+libnet-freedb-perl (0.08-1) unstable; urgency=low
+
+  * Initial Release. (Closes: #490804)
+
+ -- TANIGUCHI Takaki <takaki@debian.org>  Fri, 04 Feb 2011 10:44:26 +0900

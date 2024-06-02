@@ -1,0 +1,11 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+%:
+	dh $@
+
+override_dh_auto_test:
+	# to run full test suite, set HAVE_INTERNET to 1
+	# and put a CD-ROM into /dev/cdrom
+	HAVE_INTERNET=0 dh_auto_test

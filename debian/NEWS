@@ -1,0 +1,7 @@
+libnet-freedb-perl (0.10-1) unstable; urgency=medium
+
+  Net::FreeDB version 0.10 is a major rewrite. Its interface is NOT backward
+  compatible with version 0.9 or earlier. If you use Net::FreeDB directly in
+  your code, please take care to review the changes!
+
+ -- Florian Schlichting <fsfs@debian.org>  Tue, 01 Dec 2015 22:00:34 +0100

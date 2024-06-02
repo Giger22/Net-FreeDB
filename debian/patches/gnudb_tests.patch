@@ -1,0 +1,32 @@
+Description: [INCOMPLETE] Fix online tests to work with gnudb.gnudb.org.
+Origin: vendor
+Author: gregor herrmann <gregoa@debian.org>
+Last-Update: 2021-07-16
+
+--- a/t/10-sites.t
++++ b/t/10-sites.t
+@@ -11,11 +11,11 @@
+     ok(scalar(@sites) == 1);
+     
+     eq_or_diff($sites[0], {
+-        hostname    => 'freedb.freedb.org',
++        hostname    => 'gnudb.gnudb.org',
+         port        => 8880,
+         latitude    => 'N000.00',
+         longitude   => 'W000.00',
+-        description => 'Random freedb server',
++        description => 'Random gnudb server',
+     });
+ }
+ 
+--- a/t/11-stat.t
++++ b/t/11-stat.t
+@@ -15,7 +15,7 @@
+     ok($server_stats->{gets} eq 'no');
+     ok($server_stats->{puts} eq 'no');
+     ok($server_stats->{updates} eq 'no');
+-    ok($server_stats->{posting} eq 'no');
++    ok($server_stats->{posting} eq 'yes');
+     ok($server_stats->{validation} eq 'accepted');
+     ok($server_stats->{quotes} eq 'no');
+     ok($server_stats->{"strip ext"} eq 'no');

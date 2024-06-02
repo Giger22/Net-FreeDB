@@ -1,0 +1,3 @@
+replace_freedb_with_gnudb.patch
+#gnudb_tests.patch
+implicit-function-declaration.patch
