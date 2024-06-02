@@ -46,28 +46,6 @@ unsigned long cddb_discid(int tot_trks)
     return ((n % 0xff) << 24 | t << 8 | tot_trks);
 }
 
-struct discdata get_disc_id(char* dev)
-{
-    struct discdata data;
-    int i;
-
-    data.num_of_trks = read_toc(dev);
-
-    if (data.num_of_trks == -1) {
-        return data;
-    }
-
-    data.discid = cddb_discid(data.num_of_trks);
-
-    for (i = 0; i < data.num_of_trks; i++) {
-        data.track_offsets[i] = (cdtoc[i].frame);
-    }
-
-    data.seconds = (cdtoc[data.num_of_trks].frame)/75;
-
-    return data;
-}
-
 int read_toc(char* dev)
 {
     int drive, i, status;
@@ -149,6 +127,28 @@ int read_toc(char* dev)
     close(drive);
 
     return tochdr.cdth_trk1;
+}
+
+struct discdata get_disc_id(char* dev)
+{
+    struct discdata data;
+    int i;
+
+    data.num_of_trks = read_toc(dev);
+
+    if (data.num_of_trks == -1) {
+        return data;
+    }
+
+    data.discid = cddb_discid(data.num_of_trks);
+
+    for (i = 0; i < data.num_of_trks; i++) {
+        data.track_offsets[i] = (cdtoc[i].frame);
+    }
+
+    data.seconds = (cdtoc[data.num_of_trks].frame)/75;
+
+    return data;
 }
 
 #endif //LINUX_H
